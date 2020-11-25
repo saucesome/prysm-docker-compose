@@ -17,19 +17,15 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1591864806111,
+  "id": 1,
+  "iteration": 1603898575427,
   "links": [],
   "panels": [
     {
       "cacheTimeout": null,
       "colorBackground": true,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#FA6400",
-        "rgb(176, 83, 5)"
-      ],
+      "colors": ["#299c46", "#FA6400", "rgb(176, 83, 5)"],
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
@@ -49,7 +45,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 28
       },
       "id": 42,
       "interval": null,
@@ -280,7 +276,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 80,
       "options": {
@@ -289,9 +285,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
+          "calcs": ["mean"],
           "values": false
         }
       },
@@ -299,6 +293,7 @@
       "targets": [
         {
           "expr": "(sum(validator_balance) - sum(validator_balance offset 1h) - count(validator_balance > 16)*32 + count(validator_balance offset 1h > 0)*32)*absent(crypto_currency{pair=~\"eth$fiat\"})",
+          "hide": false,
           "instant": true,
           "interval": "",
           "legendFormat": "ETH",
@@ -493,7 +488,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 28
+        "y": 29
       },
       "id": 79,
       "options": {
@@ -502,9 +497,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
+          "calcs": ["mean"],
           "values": false
         }
       },
@@ -706,7 +699,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 28
+        "y": 29
       },
       "id": 78,
       "options": {
@@ -715,9 +708,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
+          "calcs": ["mean"],
           "values": false
         }
       },
@@ -919,7 +910,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 28
+        "y": 29
       },
       "id": 77,
       "options": {
@@ -928,9 +919,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
+          "calcs": ["mean"],
           "values": false
         }
       },
@@ -1123,7 +1112,7 @@
         "h": 3,
         "w": 5,
         "x": 16,
-        "y": 28
+        "y": 29
       },
       "id": 69,
       "options": {
@@ -1132,9 +1121,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
+          "calcs": ["mean"],
           "values": false
         }
       },
@@ -1201,7 +1188,7 @@
         "h": 3,
         "w": 3,
         "x": 21,
-        "y": 28
+        "y": 29
       },
       "id": 54,
       "links": [],
@@ -1211,9 +1198,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "values": false
         }
       },
@@ -1221,9 +1206,10 @@
       "targets": [
         {
           "expr": "(time()-process_start_time_seconds{job=\"$validator_job\"})/3600",
+          "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "launchpad",
           "refId": "A"
         }
       ],
@@ -1252,7 +1238,7 @@
         "h": 10,
         "w": 8,
         "x": 0,
-        "y": 31
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1352,7 +1338,7 @@
         "h": 10,
         "w": 8,
         "x": 8,
-        "y": 31
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1448,7 +1434,7 @@
         "h": 5,
         "w": 8,
         "x": 16,
-        "y": 31
+        "y": 32
       },
       "id": 22,
       "pageSize": 100,
@@ -1505,10 +1491,7 @@
           "decimals": 9,
           "mappingType": 1,
           "pattern": "Value #A",
-          "thresholds": [
-            "32",
-            "32.000000001"
-          ],
+          "thresholds": ["32", "32.000000001"],
           "type": "number",
           "unit": "short"
         },
@@ -1516,19 +1499,12 @@
           "alias": "status",
           "align": "auto",
           "colorMode": "value",
-          "colors": [
-            "#F2CC0C",
-            "#37872D",
-            "#E02F44"
-          ],
+          "colors": ["#F2CC0C", "#37872D", "#E02F44"],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
           "mappingType": 1,
           "pattern": "Value #B",
-          "thresholds": [
-            "3",
-            "4"
-          ],
+          "thresholds": ["3", "4"],
           "type": "string",
           "unit": "short",
           "valueMaps": [
@@ -1603,7 +1579,7 @@
         "h": 5,
         "w": 8,
         "x": 16,
-        "y": 36
+        "y": 37
       },
       "id": 20,
       "pageSize": null,
@@ -1661,10 +1637,7 @@
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #A",
-          "thresholds": [
-            "0",
-            "0"
-          ],
+          "thresholds": ["0", "0"],
           "type": "number",
           "unit": "short"
         },
@@ -1681,10 +1654,7 @@
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #B",
-          "thresholds": [
-            "0",
-            "0"
-          ],
+          "thresholds": ["0", "0"],
           "type": "number",
           "unit": "short"
         },
@@ -1701,10 +1671,7 @@
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #C",
-          "thresholds": [
-            "0",
-            "0"
-          ],
+          "thresholds": ["0", "0"],
           "type": "number",
           "unit": "short"
         },
@@ -1721,10 +1688,7 @@
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #D",
-          "thresholds": [
-            "0",
-            "0"
-          ],
+          "thresholds": ["0", "0"],
           "type": "number",
           "unit": "short"
         },
@@ -1741,10 +1705,7 @@
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #E",
-          "thresholds": [
-            "0",
-            "0"
-          ],
+          "thresholds": ["0", "0"],
           "type": "number",
           "unit": "short"
         },
@@ -1761,10 +1722,7 @@
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #F",
-          "thresholds": [
-            "0",
-            "0"
-          ],
+          "thresholds": ["0", "0"],
           "type": "number",
           "unit": "short"
         }
@@ -1831,11 +1789,7 @@
       "cacheTimeout": null,
       "colorBackground": true,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "rgb(99, 99, 99)"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "rgb(99, 99, 99)"],
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
@@ -1855,7 +1809,7 @@
         "h": 1,
         "w": 8,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 59,
       "interval": null,
@@ -1921,11 +1875,7 @@
       "cacheTimeout": null,
       "colorBackground": true,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#1F60C4"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#1F60C4"],
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
@@ -1945,7 +1895,7 @@
         "h": 1,
         "w": 11,
         "x": 8,
-        "y": 41
+        "y": 42
       },
       "id": 30,
       "interval": null,
@@ -2011,11 +1961,7 @@
       "cacheTimeout": null,
       "colorBackground": true,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#8F3BB8"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#8F3BB8"],
       "datasource": "Prometheus",
       "decimals": null,
       "fieldConfig": {
@@ -2036,7 +1982,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 41
+        "y": 42
       },
       "id": 41,
       "interval": null,
@@ -2103,9 +2049,12 @@
       "aliasColors": {
         "CPU beacon node": "red",
         "CPU validator": "purple",
+        "CPU validator localhost:8079": "orange",
+        "CPU validator localhost:8081": "green",
         "beacon node": "rgb(68, 218, 252)",
         "memory beacon node": "rgb(96, 252, 255)",
         "memory validator": "rgb(255, 255, 160)",
+        "memory validator localhost:8081": "purple",
         "test": "green",
         "test beacon node": "orange",
         "test validator": "green",
@@ -2127,12 +2076,12 @@
         "h": 10,
         "w": 8,
         "x": 0,
-        "y": 42
+        "y": 43
       },
       "hiddenSeries": false,
       "id": 32,
       "legend": {
-        "alignAsTable": false,
+        "alignAsTable": true,
         "avg": false,
         "current": true,
         "hideEmpty": false,
@@ -2163,7 +2112,14 @@
           "yaxis": 2
         },
         {
-          "alias": "CPU validator",
+          "alias": "CPU validator localhost:8079",
+          "fill": 0,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "yaxis": 2
+        },
+        {
+          "alias": "CPU validator localhost:8081",
           "fill": 0,
           "linewidth": 1,
           "nullPointMode": "null as zero",
@@ -2175,22 +2131,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg_over_time(go_memstats_alloc_bytes{job=\"$node_job\"}[1m:5s])",
+          "expr": "avg_over_time(process_resident_memory_bytes{job=\"$node_job\"}[1m:5s])",
           "interval": "",
           "legendFormat": "memory {{job}}",
           "refId": "A"
         },
         {
-          "expr": "avg_over_time(go_memstats_alloc_bytes{job=\"$validator_job\"}[1m:5s])",
+          "expr": "avg_over_time(process_resident_memory_bytes{job=\"$validator_job\"}[1m:5s])",
           "interval": "",
-          "legendFormat": "memory {{job}}",
+          "legendFormat": "memory {{job}} {{instance}}",
           "refId": "C"
         },
         {
-          "expr": "((process_cpu_seconds_total - process_cpu_seconds_total offset 2m) > 0)*100/120/go_maxprocs",
+          "expr": "((process_cpu_seconds_total{job=\"$node_job\"} - process_cpu_seconds_total{job=\"$node_job\"} offset 2m) > 0)*100/120/go_maxprocs{job=\"$node_job\"}",
           "interval": "",
           "legendFormat": "CPU {{job}}",
           "refId": "B"
+        },
+        {
+          "expr": "((process_cpu_seconds_total{job=\"$validator_job\"} - process_cpu_seconds_total{job=\"$validator_job\"} offset 2m) > 0)*100/120/go_maxprocs{job=\"$validator_job\"}",
+          "interval": "",
+          "legendFormat": "CPU {{job}} {{instance}}",
+          "refId": "D"
         }
       ],
       "thresholds": [
@@ -2269,7 +2231,7 @@
         "h": 10,
         "w": 8,
         "x": 8,
-        "y": 42
+        "y": 43
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2326,7 +2288,7 @@
           "refId": "C"
         },
         {
-          "expr": "total_voted_target_balances/total_eligible_balances*100",
+          "expr": "beacon_prev_epoch_target_gwei/beacon_prev_epoch_active_gwei*100",
           "instant": false,
           "interval": "",
           "legendFormat": "Participation rate",
@@ -2409,7 +2371,7 @@
         "h": 2,
         "w": 3,
         "x": 16,
-        "y": 42
+        "y": 43
       },
       "id": 56,
       "links": [],
@@ -2419,9 +2381,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "values": false
         }
       },
@@ -2455,7 +2415,7 @@
         "h": 10,
         "w": 5,
         "x": 19,
-        "y": 42
+        "y": 43
       },
       "id": 24,
       "limit": 10,
@@ -2502,7 +2462,7 @@
         "h": 2,
         "w": 3,
         "x": 16,
-        "y": 44
+        "y": 45
       },
       "id": 26,
       "links": [],
@@ -2512,9 +2472,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "values": false
         }
       },
@@ -2566,7 +2524,7 @@
         "h": 2,
         "w": 3,
         "x": 16,
-        "y": 46
+        "y": 47
       },
       "id": 34,
       "links": [],
@@ -2576,9 +2534,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "values": false
         }
       },
@@ -2643,16 +2599,14 @@
         "h": 4,
         "w": 3,
         "x": 16,
-        "y": 48
+        "y": 49
       },
       "id": 40,
       "options": {
         "displayMode": "lcd",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
+          "calcs": ["last"],
           "values": false
         },
         "showUnfilled": true
@@ -2685,20 +2639,14 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                0.1
-              ],
+              "params": [0.1],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "10s",
-                "now"
-              ]
+              "params": ["A", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -2738,7 +2686,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 52
+        "y": 53
       },
       "hiddenSeries": false,
       "id": 61,
@@ -2835,20 +2783,14 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                50
-              ],
+              "params": [50],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
+              "params": ["A", "5m", "now"]
             },
             "reducer": {
               "params": [],
@@ -2887,7 +2829,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 53
+        "y": 54
       },
       "hiddenSeries": false,
       "id": 28,
@@ -2977,20 +2919,31 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                0.9
-              ],
+              "params": [0.9],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
+              "params": ["A", "5m", "now"]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [0.9],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": ["B", "5m", "now"]
             },
             "reducer": {
               "params": [],
@@ -3029,7 +2982,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 54
+        "y": 55
       },
       "hiddenSeries": false,
       "id": 44,
@@ -3128,20 +3081,14 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                0.000001
-              ],
+              "params": [0.000001],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "10s",
-                "now"
-              ]
+              "params": ["A", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -3151,20 +3098,14 @@
           },
           {
             "evaluator": {
-              "params": [
-                -10
-              ],
+              "params": [-10],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "10s",
-                "now"
-              ]
+              "params": ["A", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -3203,7 +3144,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 55
+        "y": 56
       },
       "hiddenSeries": false,
       "id": 48,
@@ -3296,20 +3237,14 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                50
-              ],
+              "params": [50],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "10s",
-                "now"
-              ]
+              "params": ["A", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -3319,20 +3254,14 @@
           },
           {
             "evaluator": {
-              "params": [
-                100
-              ],
+              "params": [100],
               "type": "gt"
             },
             "operator": {
               "type": "or"
             },
             "query": {
-              "params": [
-                "B",
-                "10s",
-                "now"
-              ]
+              "params": ["B", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -3371,7 +3300,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 56
+        "y": 57
       },
       "hiddenSeries": false,
       "id": 52,
@@ -3470,21 +3399,14 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                4.9,
-                5.1
-              ],
+              "params": [4.9, 5.1],
               "type": "within_range"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "10s",
-                "now"
-              ]
+              "params": ["A", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -3523,7 +3445,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 57
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 50,
@@ -3620,20 +3542,14 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [
-                66
-              ],
+              "params": [66],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": [
-                "A",
-                "10s",
-                "now"
-              ]
+              "params": ["A", "10s", "now"]
             },
             "reducer": {
               "params": [],
@@ -3646,7 +3562,7 @@
         "for": "0m",
         "frequency": "1m",
         "handler": 1,
-        "message": "NETWORK ALERT: THE PARTICIPATION RATE IS BELOW 66%! You will start to get penalties until the rate rise up above 66% again. This alert doesn't require any action from you",
+        "message": "NETWORK ALERT: THE PARTICIPATION RATE IS BELOW 66%! You won't get any reward until the participation rate rise up above 66% again. This alert doesn't require any action from you",
         "name": "NETWORK: Participation rate below 66%",
         "noDataState": "ok",
         "notifications": [
@@ -3672,7 +3588,7 @@
         "h": 1,
         "w": 5,
         "x": 19,
-        "y": 58
+        "y": 59
       },
       "hiddenSeries": false,
       "id": 65,
@@ -3701,7 +3617,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "total_voted_target_balances/total_eligible_balances*100",
+          "expr": "beacon_prev_epoch_target_gwei/beacon_prev_epoch_active_gwei*100",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -3828,6 +3744,46 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "localhost:8081",
+          "value": "localhost:8081"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "validator_launchpad",
+        "options": [
+          {
+            "selected": true,
+            "text": "localhost:8081",
+            "value": "localhost:8081"
+          }
+        ],
+        "query": "localhost:8081",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "localhost:8079",
+          "value": "localhost:8079"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "validator_ethdo",
+        "options": [
+          {
+            "selected": true,
+            "text": "localhost:8079",
+            "value": "localhost:8079"
+          }
+        ],
+        "query": "localhost:8079",
+        "skipUrlSync": false,
+        "type": "constant"
       }
     ]
   },
@@ -3851,5 +3807,5 @@
   "timezone": "",
   "title": "ETH staking dashboard",
   "uid": "t2yHaa3Zz",
-  "version": 99
+  "version": 116
 }

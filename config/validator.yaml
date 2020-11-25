@@ -5,6 +5,9 @@
 ##
 ############################################################
 
+# medalla: true
+accept-terms-of-use: true
+
 ##############
 # Connectivity
 beacon-rpc-provider: beacon:4000

@@ -8,20 +8,19 @@ This docker-compose suite includes all parts to run and monitor a Prysm Ethereum
 ![image](https://user-images.githubusercontent.com/54934211/82322339-a3e58300-99d6-11ea-8962-7795c46ed778.png)
 
 ![image](https://user-images.githubusercontent.com/54934211/82313615-e1431400-99c8-11ea-9e04-eb7f7eda3caf.png)
-Credits to [prysm-grafana-dashboard](https://github.com/GuillaumeMiralles/prysm-grafana-dashboard) for providing the dashboards!
 
-![image](https://user-images.githubusercontent.com/54934211/84988542-7a895580-b142-11ea-8e25-d9c8a5499521.png)
-Using [docker-elk](https://github.com/stefa2k/docker-elk)
+<!-- ![image](https://user-images.githubusercontent.com/54934211/84988542-7a895580-b142-11ea-8e25-d9c8a5499521.png)
+Using [docker-elk](https://github.com/stefa2k/docker-elk) -->
 
 ## Services
-* geth (beacon conntects to it to see deposits for validators)
 * beacon
 * validator
-* slasher
 * prometheus
 * grafana
+* geth (optional, not enabled by default)
+* slasher (optional, not enabled by default)
 
-**All services are enabled by default.**
+Geth should be used for testing environments; for mainnet, more disk space is required and isn't recommended on the same machine if operating from the cloud due to costs.
 
 ### Minimal Setup (beacon & validator only)
 In case you want to run only beacon & validator (geth, slasher, prometheus, grafana get disabled) move the `./compose-examples/docker-compose.beacon-validator.override.yaml` file in the same folder as your `docker-compose.yaml` and rename it to `docker-compose.override.yaml`. Read up on [docker-compose files & override](https://docs.docker.com/compose/extends/#multiple-compose-files) to customize your setup further.
@@ -33,13 +32,6 @@ cp compose-examples/docker-compose.arm64.override.yaml docker-compose.override.y
 ```
 This also disables prometheus and grafana and uses external eth1 node connection (see `./config/beacon-no-geth.yaml` for changing the endpoint).
 
-### Spadina
-To run with [Spadina testnet](https://github.com/goerli/medalla/tree/master/spadina) copy `./compose-examples/docker-compose.spadina.override.yaml` in the same folder as your `docker-compose.yaml` and rename it to `docker-compose.override.yaml`.
-
-### Zinken
-To run with [Zinken testnet](https://github.com/goerli/medalla/tree/master/zinken) copy `./compose-examples/docker-compose.zinken.override.yaml` in the same folder as your `docker-compose.yaml` and rename it to `docker-compose.override.yaml`.
-
-Thanks to [@danbryan](https://github.com/danbryan) for this contribution!
 
 ## (optional) Configure your node
 
@@ -117,10 +109,3 @@ There is an excellent short article about [how to install docker and docker-comp
 
 ### I want to use a specific Ethereum 1 node!
 Edit the line with `http-web3provider` in [./config/beacon.yaml](https://github.com/stefa2k/prysm-docker-compose/blob/master/config/beacon.yaml) and set your Ethereum 1 node URL, e. g. use it with [Infura.io](https://infura.io/) and make it look like this: `http-web3provider: https://goerli.infura.io:443/v3/put-your-infura-id-here`.
-
-## Support the maintainer
-This software is provided under MIT license and therefore freely usable without restrictions. Dontations are always welcome:
-
-ETH - 0xA1DDc7ed6E7b9179C68cDEE24a5e47dE930061eE
-
-BTC - 39n4LUxbcCfJvBGvFVVwQQkGxSJ44JRYV7

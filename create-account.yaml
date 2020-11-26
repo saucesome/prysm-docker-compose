@@ -13,3 +13,9 @@ services:
     command: accounts list --wallet-dir="/data/wallets" --wallet-password-file="/data/passwords/wallet-password"
     volumes:
       - ./validator:/data
+  validator-create-account:
+    container_name: validator-create-account
+    image: gcr.io/prysmaticlabs/prysm/validator:${PRYSM_DOCKER_TAG}
+    command: accounts create --wallet-dir="/data/wallets" --wallet-password-file="/data/passwords/wallet-password"
+    volumes:
+      - ./validator:/data

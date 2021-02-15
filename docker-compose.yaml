@@ -20,6 +20,8 @@ services:
       - 127.0.0.1:4000:4000
       - 13000:13000/tcp
       - 12000:12000/udp
+      - 8080:8080/tcp
+      - 3500:3500/tcp
     volumes:
       - ./config/beacon.yaml:/config/beacon.yaml:ro
       - ./beacon:/data
@@ -33,7 +35,7 @@ services:
       - beacon
     command: --config-file=/config/validator.yaml
     ports:
-      - 127.0.0.1:7500:7500
+      - 7500:7500/tcp
     volumes:
       - ./config/validator.yaml:/config/validator.yaml:ro
       - ./validator:/data

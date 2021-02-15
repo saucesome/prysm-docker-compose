@@ -18,6 +18,9 @@ p2p-host-dns: ""
 
 rpc-host: 0.0.0.0
 monitoring-host: 0.0.0.0
+grpc-gateway-host: 0.0.0.0
+grpc-gateway-corsdomain: http://127.0.0.1:7500
+grpc-gateway-port: 3500
 
 # disable scan of local network
 p2p-denylist:

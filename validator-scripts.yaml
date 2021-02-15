@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  validator-import-launchpad:
+    container_name: validator-import-launchpad
+    image: gcr.io/prysmaticlabs/prysm/validator:${PRYSM_DOCKER_TAG}
+    command: accounts import --keys-dir="/launchpad/eth2.0-deposit-cli/validator_keys" --wallet-dir="/data/wallets" --wallet-password-file="/data/passwords/wallet-password"
+    volumes:
+      - ./validator:/data
+      - ./launchpad:/launchpad
+  validator-list-accounts:
+    container_name: validator_list_accounts
+    image: gcr.io/prysmaticlabs/prysm/validator:${PRYSM_DOCKER_TAG}
+    command: accounts list --wallet-dir="/data/wallets" --wallet-password-file="/data/passwords/wallet-password"
+    volumes:
+      - ./validator:/data
+  validator-disable-accounts:
+    container_name: validator_disable_accounts
+    image: gcr.io/prysmaticlabs/prysm/validator:${PRYSM_DOCKER_TAG}
+    command: accounts disable --disable-public-keys="***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***,***REMOVED***" --wallet-dir="/data/wallets" --wallet-password-file="/data/passwords/wallet-password"
+    volumes:
+      - ./validator:/data
+  validator-create-account:
+    container_name: validator-create-account
+    image: gcr.io/prysmaticlabs/prysm/validator:${PRYSM_DOCKER_TAG}
+    command: accounts create --wallet-dir="/data/wallets" --wallet-password-file="/data/passwords/wallet-password"
+    volumes:
+      - ./validator:/data
+  validator-version:
+    container_name: validator-create-account
+    image: gcr.io/prysmaticlabs/prysm/validator:${PRYSM_DOCKER_TAG}
+    command: --version
+

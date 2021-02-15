@@ -5,7 +5,11 @@
 ##
 ############################################################
 
-accept-terms-of-use: true
+accept-terms-of-use: yes
+# web: yes
+
+grpc-gateway-host: 0.0.0.0
+grpc-gateway-port: 7500
 
 ##############
 # Connectivity
